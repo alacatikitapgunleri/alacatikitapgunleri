@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Etkinlik Programı — Alaçatı Kitap Günleri</title>
-<meta name="description" content="Alaçatı Kitap Günleri 8-10 Mayıs 2026 etkinlik programı. Söyleşiler, atölyeler, konserler ve daha fazlası." />
+<meta name="description" content="Alaçatı Kitap Günleri 8-10 Mayıs 2026 etkinlik programı. Söyleşiler, atölyeler, çocuk etkinlikleri ve yan etkinlikler." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,9 +19,8 @@ img { max-width:100%; display:block; }
 a { color:inherit; text-decoration:none; }
 button { font-family:inherit; cursor:pointer; border:none; background:none; }
 
-.nav { position:fixed; top:0; left:0; right:0; z-index:1000; padding:20px 40px; display:flex; align-items:center; justify-content:space-between; background:rgba(251,246,236,0.85); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid transparent; transition:border-color 0.3s ease, padding 0.3s ease; }
+.nav { position:fixed; top:0; left:0; right:0; z-index:1000; padding:20px 40px; display:flex; align-items:center; justify-content:flex-end; background:rgba(251,246,236,0.85); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid transparent; transition:border-color 0.3s ease, padding 0.3s ease; }
 .nav.scrolled { border-bottom-color:rgba(26,26,26,0.1); padding:14px 40px; }
-.nav-logo img { height:50px; width:auto; display:block; }
 .nav-links { display:flex; gap:32px; list-style:none; font-family:var(--font-accent); font-size:14px; font-weight:500; letter-spacing:0.02em; }
 .nav-links a { position:relative; padding:6px 0; transition:color 0.2s; }
 .nav-links a::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:var(--ink); transition:width 0.3s ease; }
@@ -52,27 +51,29 @@ button { font-family:inherit; cursor:pointer; border:none; background:none; }
 .day-tab.active { background:var(--ink); color:var(--cream); }
 .day-tab:hover:not(.active) { background:var(--pink); }
 
-.day-content { display:none; padding:60px 0; }
+.day-content { display:none; padding:40px 0; }
 .day-content.active { display:block; animation:fadeIn 0.5s ease; }
 @keyframes fadeIn { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
 
-.placeholder { text-align:center; padding:80px 40px; border:2px dashed rgba(26,26,26,0.3); background:var(--cream); }
-.placeholder .icon { font-family:var(--font-display); font-size:72px; font-style:italic; line-height:1; color:var(--coral); margin-bottom:20px; font-weight:300; }
-.placeholder h3 { font-family:var(--font-display); font-size:clamp(28px,3.5vw,44px); font-weight:400; margin-bottom:16px; line-height:1.2; }
-.placeholder h3 em { font-style:italic; color:var(--coral); }
-.placeholder p { font-size:16px; line-height:1.7; max-width:520px; margin:0 auto; color:var(--ink-soft); }
+.category-title { font-family:var(--font-accent); font-size:12px; letter-spacing:0.2em; text-transform:uppercase; font-weight:600; margin:50px 0 24px; padding:8px 16px; background:var(--ink); color:var(--cream); display:inline-block; }
+.category-title:first-child { margin-top:0; }
 
-.theme-info { padding:120px 40px; background:var(--pink); border-top:3px solid var(--ink); border-bottom:3px solid var(--ink); }
-.theme-info-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1.4fr; gap:60px; align-items:start; }
-.theme-info-head h2 { font-family:var(--font-display); font-size:clamp(40px,5.5vw,80px); line-height:0.9; font-weight:300; letter-spacing:-0.02em; }
-.theme-info-head h2 em { font-style:italic; color:var(--coral); }
-.theme-info-content { font-size:17px; line-height:1.75; display:flex; flex-direction:column; gap:20px; }
-.theme-info-content em { font-style:italic; color:var(--coral); font-weight:500; }
-.theme-info-content a { border-bottom:1px solid var(--ink); }
+.event-list { display:flex; flex-direction:column; gap:0; }
+.event-item { display:grid; grid-template-columns:140px 1fr auto; gap:24px; align-items:start; padding:24px 0; border-bottom:1px solid rgba(26,26,26,0.15); transition:padding 0.3s; }
+.event-item:first-child { border-top:2px solid var(--ink); }
+.event-time { font-family:var(--font-accent); font-size:14px; font-weight:600; letter-spacing:0.05em; padding-top:3px; }
+.event-details h3 { font-family:var(--font-display); font-size:22px; font-weight:500; line-height:1.25; margin-bottom:6px; }
+.event-details h3 em { font-style:italic; color:var(--coral); }
+.event-meta { font-size:14px; line-height:1.6; color:var(--ink-soft); }
+.event-meta span { display:inline; }
+.event-meta .mod { font-style:italic; }
+.event-venue { font-family:var(--font-accent); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; font-weight:600; color:var(--ink-soft); padding-top:3px; white-space:nowrap; }
+.event-form { display:inline-flex; align-items:center; gap:6px; margin-top:8px; padding:8px 16px; background:var(--coral); color:var(--cream); font-family:var(--font-accent); font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; transition:transform 0.2s, background 0.2s; }
+.event-form:hover { transform:translate(-2px,-2px); background:var(--ink); }
 
-.closing { padding:120px 40px; background:var(--green); text-align:center; border-top:3px solid var(--ink); position:relative; overflow:hidden; }
-.closing::before { content:''; position:absolute; top:-80px; left:-80px; width:280px; height:280px; background:var(--yellow); border-radius:50%; opacity:0.55; }
-.closing::after { content:''; position:absolute; bottom:-60px; right:-60px; width:220px; height:220px; background:var(--turquoise); border-radius:50%; opacity:0.55; }
+.closing { padding:120px 40px; background:var(--pink); text-align:center; border-top:3px solid var(--ink); position:relative; overflow:hidden; }
+.closing::before { content:''; position:absolute; top:-80px; left:-80px; width:280px; height:280px; background:var(--yellow); border-radius:50%; opacity:0.6; }
+.closing::after { content:''; position:absolute; bottom:-60px; right:-60px; width:220px; height:220px; background:var(--turquoise); border-radius:50%; opacity:0.5; }
 .closing-inner { position:relative; z-index:1; max-width:900px; margin:0 auto; }
 .closing h2 { font-family:var(--font-display); font-size:clamp(44px,7vw,110px); line-height:0.9; font-weight:300; font-style:italic; letter-spacing:-0.03em; }
 
@@ -95,7 +96,6 @@ button { font-family:inherit; cursor:pointer; border:none; background:none; }
 
 @media (max-width:960px) {
   .nav { padding:16px 24px; }
-  .nav-logo img { height:42px; }
   .nav-links { position:fixed; top:0; right:0; width:75%; height:100vh; background:var(--cream); flex-direction:column; padding:100px 40px; gap:28px; font-size:22px; transform:translateX(100%); transition:transform 0.35s ease; box-shadow:-8px 0 30px rgba(0,0,0,0.1); }
   .nav-links.open { transform:translateX(0); }
   .nav-toggle { display:flex; z-index:1001; }
@@ -104,9 +104,8 @@ button { font-family:inherit; cursor:pointer; border:none; background:none; }
   .day-tabs { flex-direction:column; }
   .day-tab { border-right:none; border-bottom:2px solid var(--ink); }
   .day-tab:last-child { border-bottom:none; }
-  .placeholder { padding:50px 24px; }
-  .theme-info { padding:80px 24px; }
-  .theme-info-inner { grid-template-columns:1fr; gap:40px; }
+  .event-item { grid-template-columns:1fr; gap:8px; }
+  .event-venue { white-space:normal; }
   .closing { padding:80px 24px; }
   .footer { padding:80px 24px 30px; }
   .footer-top { grid-template-columns:1fr; gap:40px; padding-bottom:40px; }
@@ -116,7 +115,6 @@ button { font-family:inherit; cursor:pointer; border:none; background:none; }
 <body>
 
 <nav class="nav" id="nav">
-  <a href="index.html" class="nav-logo"></a>
   <ul class="nav-links" id="navLinks">
     <li><a href="index.html">Anasayfa</a></li>
     <li><a href="hakkimizda.html">Hakkımızda</a></li>
@@ -141,7 +139,7 @@ button { font-family:inherit; cursor:pointer; border:none; background:none; }
       Etkinlik <em>Programı</em>
     </h1>
     <p class="page-subtitle">
-      Üç gün, üç farklı hikâye. 8-10 Mayıs 2026, Alaçatı.
+      Katılımınız konusunda bize haber vermek için ön talep formlarını doldurmanızı rica ederiz.
     </p>
   </div>
 </section>
@@ -163,56 +161,499 @@ button { font-family:inherit; cursor:pointer; border:none; background:none; }
       </button>
     </div>
 
+    <!-- ==================== 8 MAYIS CUMA ==================== -->
     <div class="day-content active" id="gun1">
-      <div class="placeholder">
-        <div class="icon">…</div>
-        <h3>Program <em>detayları</em> yakında burada.</h3>
-        <p>8 Mayıs Cuma günü için söyleşi, atölye, konser ve diğer etkinliklerin tam programı önümüzdeki günlerde açıklanacak.</p>
-      </div>
-    </div>
-    <div class="day-content" id="gun2">
-      <div class="placeholder">
-        <div class="icon">…</div>
-        <h3>Program <em>detayları</em> yakında burada.</h3>
-        <p>9 Mayıs Cumartesi günü için söyleşi, atölye, konser ve diğer etkinliklerin tam programı önümüzdeki günlerde açıklanacak.</p>
-      </div>
-    </div>
-    <div class="day-content" id="gun3">
-      <div class="placeholder">
-        <div class="icon">…</div>
-        <h3>Program <em>detayları</em> yakında burada.</h3>
-        <p>10 Mayıs Pazar günü için söyleşi, atölye, konser ve diğer etkinliklerin tam programı önümüzdeki günlerde açıklanacak.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="theme-info">
-  <div class="theme-info-inner">
-    <div class="theme-info-head reveal">
-      <h2>Festival <em>teması:</em><br/>İlkler</h2>
+      <div class="category-title">Söyleşiler ve Atölyeler</div>
+      <div class="event-list">
+
+        <div class="event-item">
+          <div class="event-time">12.00–13.00</div>
+          <div class="event-details">
+            <h3>Fatma Burçak ile <em>"Edebi Rotalar Deneyimi"</em> söyleşisi.</h3>
+            <div class="event-meta">Düzenleyen: Kelime Yayınları – Alaçatı Kitap Günleri</div>
+            <a href="https://forms.gle/JbSDN5SiKfUQBKsn7" target="_blank" rel="noopener" class="event-form">Ön Talep Formu →</a>
+          </div>
+          <div class="event-venue">Vintage Otel</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">13.00–14.00</div>
+          <div class="event-details">
+            <h3>Övgü Deveci Safi ile <em>"İlklerin Zorluğu: Genç Yazar Olmak"</em> söyleşisi.</h3>
+            <div class="event-meta">Moderatör: Cemran Öder · Düzenleyen: Alaçatı Kitap Günleri</div>
+            <a href="https://forms.gle/tgkrY3fUzfJt7rVY6" target="_blank" rel="noopener" class="event-form">Ön Talep Formu →</a>
+          </div>
+          <div class="event-venue">Viento Otel</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">14.00–15.00</div>
+          <div class="event-details">
+            <h3>Sibel Oral ile <em>"İlk Uyarlamalardan Bugüne – Edebiyattan Beyaz Perdeye"</em> söyleşisi.</h3>
+            <div class="event-meta">Moderatör: Erkan Aktuğ · Düzenleyen: Alaçatı Kitap Günleri</div>
+            <a href="https://forms.gle/Af6UPDjpMCP2PW869" target="_blank" rel="noopener" class="event-form">Ön Talep Formu →</a>
+          </div>
+          <div class="event-venue">Beyevi Otel</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">14.30–16.00</div>
+          <div class="event-details">
+            <h3>Sevinç Erbulak, Ayşe Erbulak ve Füsun Erbulak ile <em>"Yazar – Seslendiren – Üç Kuşak Edebiyat"</em> söyleşisi.</h3>
+            <div class="event-meta">Düzenleyen: Alaçatı Kitap Günleri</div>
+            <a href="https://forms.gle/aczU66RcyLEMsv5d6" target="_blank" rel="noopener" class="event-form">Ön Talep Formu →</a>
+          </div>
+          <div class="event-venue">Gaia Alaçatı</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">15.00–16.00</div>
+          <div class="event-details">
+            <h3>Ferdi Çetin ile <em>"Tiyatroda İlkler"</em> söyleşisi.</h3>
+            <div class="event-meta">Düzenleyen: Alaçatı Kitap Günleri</div>
+            <a href="https://forms.gle/pjCohEgJ4URxB2Wa7" target="_blank" rel="noopener" class="event-form">Ön Talep Formu →</a>
+          </div>
+          <div class="event-venue">Sailors Alaçatı</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">16.00–17.00</div>
+          <div class="event-details">
+            <h3>Birsen Ferahlı ve Cemran Öder ile <em>"Füruzan Anısına: Ege'den Sevgilerle"</em> söyleşisi.</h3>
+            <div class="event-meta">Düzenleyen: Alaçatı Kitap Günleri</div>
+            <a href="https://forms.gle/Z9NZUGKSgTLvPudf6" target="_blank" rel="noopener" class="event-form">Ön Talep Formu →</a>
+          </div>
+          <div class="event-venue">Köstem Otel</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">17.00–18.00</div>
+          <div class="event-details">
+            <h3>Özlem Sipahioğlu ve Yankı Enki ile <em>"Uygarlığın Barbarlığı: Distopya Edebiyatı"</em> söyleşisi.</h3>
+            <div class="event-meta">Düzenleyen: Siren Yayınları</div>
+            <a href="https://forms.gle/4HUYCiHT3eMx2L12A" target="_blank" rel="noopener" class="event-form">Ön Talep Formu →</a>
+          </div>
+          <div class="event-venue">İmren Otel</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">17.00–18.00</div>
+          <div class="event-details">
+            <h3>Esra Güven ile <em>"Tohumların Hamileri"</em> söyleşisi.</h3>
+            <div class="event-meta">Düzenleyen: Alef Yayınevi</div>
+            <a href="https://forms.gle/2nFGSkVhPtvnQntt6" target="_blank" rel="noopener" class="event-form">Ön Talep Formu →</a>
+          </div>
+          <div class="event-venue">Zaena Otel</div>
+        </div>
+
+      </div>
+
+      <div class="category-title">Çocuk Etkinlikleri</div>
+      <div class="event-list">
+
+        <div class="event-item">
+          <div class="event-time">09.00–10.00</div>
+          <div class="event-details">
+            <h3>Okuma Etkinliği</h3>
+            <div class="event-meta">Yaş grubu: 9–12 yaş · Yönlendiren: Selen Baranoğlu · Kontenjan: 40 kişi · Düzenleyen: Alaçatı Kitap Günleri</div>
+          </div>
+          <div class="event-venue">Arkas Sanat</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">11.00–12.00</div>
+          <div class="event-details">
+            <h3>Okuma ve Boyama Etkinliği</h3>
+            <div class="event-meta">Yaş grubu: 4–6 yaş · Yönlendiren: Sanem Bahçekapılı · Kontenjan: 20 kişi · Düzenleyen: Alaçatı Kitap Günleri</div>
+          </div>
+          <div class="event-venue">Arkas Sanat</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">13.00–14.00</div>
+          <div class="event-details">
+            <h3>Matthew'un Rüyası</h3>
+            <div class="event-meta">Yaş grubu: 1. sınıf ya da anaokulu · Yönlendiren: Merve Çalışkan · Kontenjan: 20 kişi · Düzenleyen: Elma Yayınevi</div>
+          </div>
+          <div class="event-venue">Arkas Sanat</div>
+        </div>
+
+      </div>
+
+      <div class="category-title">Yan Etkinlikler</div>
+      <div class="event-list">
+
+        <div class="event-item">
+          <div class="event-time">10.00</div>
+          <div class="event-details">
+            <h3>Çocuklar Sergi Açılışı</h3>
+            <div class="event-meta">Kontenjan: 15 kişi</div>
+          </div>
+          <div class="event-venue">Yaahane</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">11.00–12.30</div>
+          <div class="event-details">
+            <h3>Kitap Kulübü</h3>
+            <div class="event-meta">Konuşmacı: Edebiyat Dostları Derneği · Kontenjan: 15 kişi</div>
+          </div>
+          <div class="event-venue">Yaahane</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">16.00–17.00</div>
+          <div class="event-details">
+            <h3>Çizgi Roman Kulübü</h3>
+            <div class="event-meta">Konuşmacı: Duygu Özdemir · Kontenjan: 15 kişi · Düzenleyen: Nada Kitap</div>
+          </div>
+          <div class="event-venue">Yaahane</div>
+        </div>
+
+      </div>
+
     </div>
-    <div class="theme-info-content reveal">
-      <p>
-        Bu yılın festival teması <em>"İlkler"</em>. Tematik etkinliklerde <em>"Edebiyatta İlk Kitaplar"</em>, <em>"Sinemada İlk'ler"</em>, <em>"Müzik Tarihimizde İlk'ler"</em> ve <em>"Tiyatroda İlk'ler"</em> gibi başlıklar yer alacak.
-      </p>
-      <p>
-        Tam program ve katılımcılar önümüzdeki günlerde duyurulacak. Gelişmelerden haberdar olmak için <a href="https://instagram.com/alacatikitapgunleri" target="_blank">@alacatikitapgunleri</a> sayfamızdan bizi takip edebilirsiniz.
-      </p>
+
+    <!-- ==================== 9 MAYIS CUMARTESİ ==================== -->
+    <div class="day-content" id="gun2">
+
+      <div class="category-title">Söyleşiler ve Atölyeler</div>
+      <div class="event-list">
+
+        <div class="event-item">
+          <div class="event-time">11.00–12.00</div>
+          <div class="event-details">
+            <h3>Funda Sakaoğlu ile <em>"Küçük Prens"</em> atölyesi.</h3>
+            <div class="event-meta">Düzenleyen: Alaçatı Kitap Günleri</div>
+            <a href="https://forms.gle/et6kdTZAYF9drsRr6" target="_blank" rel="noopener" class="event-form">Ön Talep Formu →</a>
+          </div>
+          <div class="event-venue">Sailors Alaçatı</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">12.00–13.00</div>
+          <div class="event-details">
+            <h3>French Oje ile söyleşi.</h3>
+            <div class="event-meta">Düzenleyen: Alaçatı Kitap Günleri</div>
+            <a href="https://forms.gle/Lnm6PoadBnCkr5jb8" target="_blank" rel="noopener" class="event-form">Ön Talep Formu →</a>
+          </div>
+          <div class="event-venue">Gaia Alaçatı</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">12.30–13.30</div>
+          <div class="event-details">
+            <h3>Selen Baranoğlu ile <em>"Hayatında Yer Aç – Sana Ait Olmayan Yükleri Bırak"</em> atölyesi.</h3>
+            <div class="event-meta">Düzenleyen: Alaçatı Kitap Günleri</div>
+            <a href="https://forms.gle/xuXHswdjX4shkTQ26" target="_blank" rel="noopener" class="event-form">Ön Talep Formu →</a>
+          </div>
+          <div class="event-venue">Pachamama Alaçatı</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">13.00–14.00</div>
+          <div class="event-details">
+            <h3>Başak Sayan ile <em>"Gülün Açtığı Gece"</em> söyleşisi.</h3>
+            <div class="event-meta">Düzenleyen: İthaki Yayınları – Alaçatı Kitap Günleri</div>
+            <a href="https://forms.gle/e6wZwT2KQTv7QV7K7" target="_blank" rel="noopener" class="event-form">Ön Talep Formu →</a>
+          </div>
+          <div class="event-venue">Vintage Otel</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">13.30–14.30</div>
+          <div class="event-details">
+            <h3>Ömer Duran ile <em>"Hayat Neye Benzeseydi Güzel Olurdu?"</em> söyleşisi.</h3>
+            <div class="event-meta">Moderatör: Gülşen İşeri · Düzenleyen: İnkılap Kitabevi Yayınları – Alaçatı Kitap Günleri</div>
+            <a href="https://forms.gle/iTVfDvc7eSVxVGNp7" target="_blank" rel="noopener" class="event-form">Ön Talep Formu →</a>
+          </div>
+          <div class="event-venue">Köstem Otel</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">13.30–14.30</div>
+          <div class="event-details">
+            <h3>Tuğba Parıltı ile <em>"Neyi, Nasıl Pişirelim?"</em> söyleşisi.</h3>
+            <div class="event-meta">Moderatör: Melis Çalapkulu · Düzenleyen: Can Yayınları / Mundi Kitap – Alaçatı Kitap Günleri</div>
+            <a href="https://forms.gle/tuD8ssS1FSeyZNyM6" target="_blank" rel="noopener" class="event-form">Ön Talep Formu →</a>
+          </div>
+          <div class="event-venue">İmren Otel</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">14.00–15.00</div>
+          <div class="event-details">
+            <h3>Ahmet Şerif İzgören ile söyleşi.</h3>
+            <div class="event-meta">Düzenleyen: Elma Yayınevi – Alaçatı Kitap Günleri</div>
+            <a href="https://forms.gle/DpxBKUGEkrE7hKRm6" target="_blank" rel="noopener" class="event-form">Ön Talep Formu →</a>
+          </div>
+          <div class="event-venue">Gaia Bazaar</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">14.30–15.30</div>
+          <div class="event-details">
+            <h3>Kürşat Başar ile <em>"Edebiyat ve Aşk"</em> söyleşisi.</h3>
+            <div class="event-meta">Düzenleyen: Alaçatı Kitap Günleri</div>
+            <a href="https://forms.gle/TcgBH8USo9tznK318" target="_blank" rel="noopener" class="event-form">Ön Talep Formu →</a>
+          </div>
+          <div class="event-venue">Viento Otel</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">15.00–16.00</div>
+          <div class="event-details">
+            <h3>Yıldız Hacıevliyagil Cüceloğlu ile <em>"Yeniden Başlamak"</em> söyleşisi.</h3>
+            <div class="event-meta">Moderatör: Cemran Öder · Düzenleyen: Alaçatı Kitap Günleri</div>
+            <a href="https://forms.gle/p5pjncbQvetUzN8f6" target="_blank" rel="noopener" class="event-form">Ön Talep Formu →</a>
+          </div>
+          <div class="event-venue">Beyevi Otel</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">15.00–16.00</div>
+          <div class="event-details">
+            <h3>Ayça Derin Karabulut ile <em>"Mide Ağrısı"</em> söyleşisi.</h3>
+            <div class="event-meta">Düzenleyen: Literatür – Alaçatı Kitap Günleri</div>
+            <a href="https://forms.gle/hxjg1XQP2qNrFQyC8" target="_blank" rel="noopener" class="event-form">Ön Talep Formu →</a>
+          </div>
+          <div class="event-venue">Zaena Otel</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">16.00–17.00</div>
+          <div class="event-details">
+            <h3>Müge İplikçi ile <em>"Sahte Cennetten Kaçış"</em> söyleşisi.</h3>
+            <div class="event-meta">Moderatör: Duygu Özdemir · Düzenleyen: Doğan Kitap – Alaçatı Kitap Günleri</div>
+            <a href="https://forms.gle/ojvsbzCr4Ha9QM2Z7" target="_blank" rel="noopener" class="event-form">Ön Talep Formu →</a>
+          </div>
+          <div class="event-venue">Sakin Ev Alaçatı</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">16.30–17.30</div>
+          <div class="event-details">
+            <h3>Adil Yıldırım ile <em>"Önce Kendini Sev"</em> söyleşisi.</h3>
+            <div class="event-meta">Düzenleyen: Destek Yayınları – Alaçatı Kitap Günleri</div>
+            <a href="https://forms.gle/XeVME5ZW9juW81G68" target="_blank" rel="noopener" class="event-form">Ön Talep Formu →</a>
+          </div>
+          <div class="event-venue">Vintage Otel</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">17.00–18.00</div>
+          <div class="event-details">
+            <h3>Jehan Barbur ile <em>"İlklerim"</em> söyleşisi.</h3>
+            <div class="event-meta">Düzenleyen: Alaçatı Kitap Günleri</div>
+            <a href="https://forms.gle/g4JSsaBXedQdHSmo6" target="_blank" rel="noopener" class="event-form">Ön Talep Formu →</a>
+          </div>
+          <div class="event-venue">Pachamama Alaçatı</div>
+        </div>
+
+      </div>
+
+      <div class="category-title">Çocuk Etkinlikleri</div>
+      <div class="event-list">
+
+        <div class="event-item">
+          <div class="event-time">10.00–11.00</div>
+          <div class="event-details">
+            <h3>Kendi Kitabını Tasarla</h3>
+            <div class="event-meta">Yaş grubu: 9–12 yaş · Yönlendiren: Eda Çağıl, Ferhat Akbaba · Kontenjan: 30 kişi · Düzenleyen: Baobab Yayınları</div>
+          </div>
+          <div class="event-venue">Arkas Sanat</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">12.00–13.00</div>
+          <div class="event-details">
+            <h3>Animasyon Gif Atölyesi</h3>
+            <div class="event-meta">Yaş grubu: 9–12 yaş · Yönlendiren: Eda Çağıl, Ferhat Akbaba · Kontenjan: 25 kişi · Düzenleyen: Baobab Yayınları</div>
+          </div>
+          <div class="event-venue">Arkas Sanat</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">14.00–15.00</div>
+          <div class="event-details">
+            <h3>Bandırma Roket Kulübü</h3>
+            <div class="event-meta">Yaş grubu: İlkokul · Yönlendiren: Merve Çalışkan · Kontenjan: 40 kişi · Düzenleyen: Elma Yayınevi</div>
+          </div>
+          <div class="event-venue">Arkas Sanat</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">16.00–17.00</div>
+          <div class="event-details">
+            <h3>Leonardo da Vinci ile Müzede Bir Macera (Okuma ve boyama)</h3>
+            <div class="event-meta">Yaş grubu: 7–10 yaş · Yönlendiren: Sena Pınar Civan · Kontenjan: 25–30 kişi · Düzenleyen: Alaçatı Kitap Günleri</div>
+          </div>
+          <div class="event-venue">Arkas Sanat</div>
+        </div>
+
+      </div>
+
+      <div class="category-title">Yan Etkinlikler</div>
+      <div class="event-list">
+
+        <div class="event-item">
+          <div class="event-time">12.00–13.00</div>
+          <div class="event-details">
+            <h3>Uzun Bacak</h3>
+            <div class="event-meta">Konuşmacı: Serap Yurdaer · Kontenjan: 15 kişi</div>
+          </div>
+          <div class="event-venue">Yaahane</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">13.00–14.30</div>
+          <div class="event-details">
+            <h3>Kitap Kulübü</h3>
+            <div class="event-meta">Konuşmacı: Duygu Özdemir · Kontenjan: 15 kişi</div>
+          </div>
+          <div class="event-venue">Yaahane</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">20.00–22.00</div>
+          <div class="event-details">
+            <h3>Kitap Temalı Quiz</h3>
+            <div class="event-meta">Düzenleyen: Community Hub İzmir</div>
+          </div>
+          <div class="event-venue">Gaia Alaçatı</div>
+        </div>
+
+      </div>
+
     </div>
+
+    <!-- ==================== 10 MAYIS PAZAR ==================== -->
+    <div class="day-content" id="gun3">
+
+      <div class="category-title">Söyleşiler ve Atölyeler</div>
+      <div class="event-list">
+
+        <div class="event-item">
+          <div class="event-time">12.30–13.30</div>
+          <div class="event-details">
+            <h3>Zeliha Bürtek ile <em>"Sosyal Çürüme"</em> söyleşisi.</h3>
+            <div class="event-meta">Moderatör: Gülşen İşeri · Düzenleyen: İnkılap Kitabevi Yayınları – Alaçatı Kitap Günleri</div>
+            <a href="https://forms.gle/8ZERBparhThYiMx66" target="_blank" rel="noopener" class="event-form">Ön Talep Formu →</a>
+          </div>
+          <div class="event-venue">Beyevi Otel</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">13.30–14.30</div>
+          <div class="event-details">
+            <h3>Ayşe Eser ile <em>"Pansiyoner Hayatlardan Ev Sahipliğine: İlk Uyanış"</em> söyleşisi.</h3>
+            <div class="event-meta">Düzenleyen: Elma Yayınevi – Alaçatı Kitap Günleri</div>
+            <a href="https://forms.gle/DK9pC56eoLPpF5EM6" target="_blank" rel="noopener" class="event-form">Ön Talep Formu →</a>
+          </div>
+          <div class="event-venue">Köstem Otel</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">14.30–15.30</div>
+          <div class="event-details">
+            <h3>Ulrich Gutmair ile <em>"Berlin'in İlk Günleri"</em> söyleşisi.</h3>
+            <div class="event-meta">Düzenleyen: Alaçatı Kitap Günleri</div>
+            <a href="https://forms.gle/hXjwwbCkFWuQeXe49" target="_blank" rel="noopener" class="event-form">Ön Talep Formu →</a>
+          </div>
+          <div class="event-venue">Pachamama Alaçatı</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">15.00–16.00</div>
+          <div class="event-details">
+            <h3>Fularsız Entellik ile söyleşi.</h3>
+            <div class="event-meta">Düzenleyen: Alaçatı Kitap Günleri</div>
+            <a href="https://forms.gle/kW15wda3kCTXMcnJ6" target="_blank" rel="noopener" class="event-form">Ön Talep Formu →</a>
+          </div>
+          <div class="event-venue">Gaia Alaçatı</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">16.00–17.00</div>
+          <div class="event-details">
+            <h3>Mine Söğüt ile söyleşi.</h3>
+            <div class="event-meta">Moderatör: Duygu Özdemir · Düzenleyen: Can Yayınları – Alaçatı Kitap Günleri</div>
+            <a href="https://forms.gle/xKN5ZQP21ymxZtvp8" target="_blank" rel="noopener" class="event-form">Ön Talep Formu →</a>
+          </div>
+          <div class="event-venue">Viento Otel</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">16.00–17.00</div>
+          <div class="event-details">
+            <h3>Hakan Bilgin ile <em>"Farkıma Takılanlar"</em> söyleşisi.</h3>
+            <div class="event-meta">Düzenleyen: Alaçatı Kitap Günleri</div>
+            <a href="https://forms.gle/LmnhfSB1L2CjU7Sd8" target="_blank" rel="noopener" class="event-form">Ön Talep Formu →</a>
+          </div>
+          <div class="event-venue">Vintage Otel</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">16.30–17.30</div>
+          <div class="event-details">
+            <h3>Tuna Kiremitçi ile <em>"Edebiyatta İlklerim"</em> söyleşisi.</h3>
+            <div class="event-meta">Düzenleyen: Doğan Kitap – Alaçatı Kitap Günleri</div>
+            <a href="https://forms.gle/DcdoXCokWmd7W5Vq7" target="_blank" rel="noopener" class="event-form">Ön Talep Formu →</a>
+          </div>
+          <div class="event-venue">Sakin Ev</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">17.30–18.30</div>
+          <div class="event-details">
+            <h3>Can Bonomo ile söyleşi.</h3>
+            <div class="event-meta">Düzenleyen: Alaçatı Kitap Günleri</div>
+            <a href="https://forms.gle/PZNUbKWPJCfyWqUm8" target="_blank" rel="noopener" class="event-form">Ön Talep Formu →</a>
+          </div>
+          <div class="event-venue">Gaia Bazaar</div>
+        </div>
+
+      </div>
+
+      <div class="category-title">Yan Etkinlikler</div>
+      <div class="event-list">
+
+        <div class="event-item">
+          <div class="event-time">11.00–12.30</div>
+          <div class="event-details">
+            <h3>Kitap Kulübü</h3>
+            <div class="event-meta">Konuşmacı: Alaçatı Gençler K.K · Kontenjan: 15 kişi</div>
+          </div>
+          <div class="event-venue">Yaahane</div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-time">13.00–14.30</div>
+          <div class="event-details">
+            <h3>Salim Kadıbeşegil ve Yerel Yazarlar</h3>
+            <div class="event-meta">Kontenjan: 15 kişi</div>
+          </div>
+          <div class="event-venue">Yaahane</div>
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
 </section>
 
 <section class="closing">
   <div class="closing-inner reveal">
-    <h2>Mayıs'ta Alaçatı'da<br/>görüşmek üzere!</h2>
+    <h2>Mayıs'ta Alaçatı Kitap<br/>Günleri'nde görüşmek üzere!</h2>
   </div>
 </section>
 
 <footer class="footer">
   <div class="footer-top">
     <div class="footer-brand">
-      <h3>Mayıs'ta Alaçatı'da görüşmek üzere!</h3>
+      <h3>Davetlisiniz.</h3>
       <p class="tag">
         Alaçatı Kitap Günleri ekibi olarak edebiyat aracılığıyla bağlar kurmanın ve birlikte düşünmenin yeni yollarını bulmayı hayal ediyoruz. Sizleri bu yolculuğun bir parçası olmaya davet ediyoruz.
       </p>
@@ -243,6 +684,9 @@ button { font-family:inherit; cursor:pointer; border:none; background:none; }
     <div class="socials">
       <a href="https://instagram.com/alacatikitapgunleri" target="_blank" aria-label="Instagram">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a href="#" target="_blank" aria-label="TikTok">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005.8 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1.84-.1z"/></svg>
       </a>
     </div>
   </div>
