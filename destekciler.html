@@ -19,7 +19,7 @@ img { max-width:100%; display:block; }
 a { color:inherit; text-decoration:none; }
 button { font-family:inherit; cursor:pointer; border:none; background:none; }
 
-.nav { position:fixed; top:0; left:0; right:0; z-index:1000; padding:20px 40px; display:flex; align-items:center; justify-content:space-between; background:rgba(251,246,236,0.85); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid transparent; transition:border-color 0.3s ease, padding 0.3s ease; }
+.nav { position:fixed; top:0; left:0; right:0; z-index:1000; padding:20px 40px; display:flex; align-items:center; justify-content:flex-end; background:rgba(251,246,236,0.85); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid transparent; transition:border-color 0.3s ease, padding 0.3s ease; }
 .nav.scrolled { border-bottom-color:rgba(26,26,26,0.1); padding:14px 40px; }
 .nav-logo img { height:50px; width:auto; display:block; }
 .nav-links { display:flex; gap:32px; list-style:none; font-family:var(--font-accent); font-size:14px; font-weight:500; letter-spacing:0.02em; }
@@ -117,7 +117,6 @@ button { font-family:inherit; cursor:pointer; border:none; background:none; }
 <body>
 
 <nav class="nav" id="nav">
-  <a href="index.html" class="nav-logo"></a>
   <ul class="nav-links" id="navLinks">
     <li><a href="index.html">Anasayfa</a></li>
     <li><a href="hakkimizda.html">Hakkımızda</a></li>
@@ -141,9 +140,6 @@ button { font-family:inherit; cursor:pointer; border:none; background:none; }
     <h1 class="page-title">
       Destek<em>çiler</em>
     </h1>
-    <p class="page-subtitle">
-      Kültür ve edebiyata birlikte değer katalım.
-    </p>
   </div>
 </section>
 
@@ -152,15 +148,12 @@ button { font-family:inherit; cursor:pointer; border:none; background:none; }
     <div class="reveal">
       <div class="intro-block-label">Destekçilik</div>
       <h2>
-        Bu hayalin <em>parçası</em> olun.
+        Kültür ve edebiyata birlikte <em>değer</em> katalım.
       </h2>
     </div>
     <div class="intro-block-text reveal">
       <p>
-        Alaçatı Kitap Günleri, ilk yılında bölgesel ve ulusal ölçekte güçlü bir kültür buluşması olmayı hedefliyor. Bu hedefi gerçekleştirmek için kültüre değer veren markaların, kurumların ve kişilerin desteğine ihtiyacımız var.
-      </p>
-      <p>
-        Farklı destek kategorileri ile markaların festivalin <em>kalıcı bir parçası</em> olmasını mümkün kılıyoruz. Aşağıda bu yıl sunduğumuz başlıca destek alanlarını bulabilirsiniz. Detaylı bilgi ve özel iş birlikleri için bizimle iletişime geçebilirsiniz.
+        Misyonumuzu paylaşan tüm kişi, kurum ve markaların desteği çok değerli. Destekçilik fırsatlarıyla Alaçatı Kitap Günleri'nin bir parçası olun.
       </p>
     </div>
   </div>
@@ -174,12 +167,12 @@ button { font-family:inherit; cursor:pointer; border:none; background:none; }
   <div class="category-grid reveal">
     <div class="category-card">
       <div class="num">01</div>
-      <h3>Ana Destek</h3>
+      <h3>Ana Sponsor</h3>
       <p>Festivalin tüm iletişim ve etkinlik alanlarında en üst düzey görünürlük ve özel iş birliği fırsatları.</p>
     </div>
     <div class="category-card">
       <div class="num">02</div>
-      <h3>Co-Destek</h3>
+      <h3>Co-Sponsor</h3>
       <p>Festival genelinde geniş görünürlük ve marka deneyim alanlarında yer alma imkânı.</p>
     </div>
     <div class="category-card">
@@ -189,26 +182,16 @@ button { font-family:inherit; cursor:pointer; border:none; background:none; }
     </div>
     <div class="category-card">
       <div class="num">04</div>
-      <h3>Podcast Alanı Desteği</h3>
-      <p>Festival boyunca aktif olacak podcast ve röportaj alanının özel destekçisi olma fırsatı.</p>
-    </div>
-    <div class="category-card">
-      <div class="num">05</div>
       <h3>Çocuk Alanı Desteği</h3>
       <p>Çocuklara özel olarak hazırlanan okuma, atölye ve oyun alanlarına destek verin.</p>
     </div>
     <div class="category-card">
-      <div class="num">06</div>
-      <h3>Plaj Okuma Alanı Desteği</h3>
-      <p>Delikli Koy ve Ilıca'da kurulacak plaj okuma alanlarının özel destekçisi olun.</p>
-    </div>
-    <div class="category-card">
-      <div class="num">07</div>
+      <div class="num">05</div>
       <h3>Ulaşım Desteği</h3>
       <p>Festival ziyaretçilerinin Alaçatı içi ve çevresindeki ulaşımına katkı sağlayan destek programı.</p>
     </div>
     <div class="category-card">
-      <div class="num">08</div>
+      <div class="num">06</div>
       <h3>Medya Desteği</h3>
       <p>Festivalin tanıtım ve iletişim sürecinde medya iş birlikleri için özel kategori.</p>
     </div>
@@ -228,14 +211,14 @@ button { font-family:inherit; cursor:pointer; border:none; background:none; }
 
 <section class="closing">
   <div class="closing-inner reveal">
-    <h2>Mayıs'ta Alaçatı'da<br/>görüşmek üzere!</h2>
+    <h2>Mayıs'ta Alaçatı Kitap<br/>Günleri'nde görüşmek üzere!</h2>
   </div>
 </section>
 
 <footer class="footer">
   <div class="footer-top">
     <div class="footer-brand">
-      <h3>Mayıs'ta Alaçatı'da görüşmek üzere!</h3>
+      <h3>Davetlisiniz.</h3>
       <p class="tag">
         Alaçatı Kitap Günleri ekibi olarak edebiyat aracılığıyla bağlar kurmanın ve birlikte düşünmenin yeni yollarını bulmayı hayal ediyoruz. Sizleri bu yolculuğun bir parçası olmaya davet ediyoruz.
       </p>
