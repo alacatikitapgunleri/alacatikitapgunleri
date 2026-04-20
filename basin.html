@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Basın &amp; Medya — Alaçatı Kitap Günleri</title>
-<meta name="description" content="Alaçatı Kitap Günleri hakkında çıkan haberler ve basın bültenleri." />
+<title>Ekibimiz — Alaçatı Kitap Günleri</title>
+<meta name="description" content="Alaçatı Kitap Günleri ekibi. Proje yönetimi, yayıncılık, finans, turizm, kültür-sanat, iletişim ve sosyal medya gibi farklı alanlarda deneyime sahip insanlar." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +19,7 @@ img { max-width:100%; display:block; }
 a { color:inherit; text-decoration:none; }
 button { font-family:inherit; cursor:pointer; border:none; background:none; }
 
-.nav { position:fixed; top:0; left:0; right:0; z-index:1000; padding:20px 40px; display:flex; align-items:center; justify-content:flex-end; background:rgba(251,246,236,0.85); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid transparent; transition:border-color 0.3s ease, padding 0.3s ease; }
+.nav { position:fixed; top:0; left:0; right:0; z-index:1000; padding:20px 40px; display:flex; align-items:center; justify-content:space-between; background:rgba(251,246,236,0.85); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid transparent; transition:border-color 0.3s ease, padding 0.3s ease; }
 .nav.scrolled { border-bottom-color:rgba(26,26,26,0.1); padding:14px 40px; }
 .nav-logo img { height:50px; width:auto; display:block; }
 .nav-links { display:flex; gap:32px; list-style:none; font-family:var(--font-accent); font-size:14px; font-weight:500; letter-spacing:0.02em; }
@@ -32,40 +32,38 @@ button { font-family:inherit; cursor:pointer; border:none; background:none; }
 .nav-toggle.open span:nth-child(2) { opacity:0; }
 .nav-toggle.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
 
-.page-header { padding:180px 40px 100px; background:var(--orange); border-bottom:3px solid var(--ink); position:relative; overflow:hidden; }
-.page-header::before { content:''; position:absolute; top:25%; right:-100px; width:340px; height:340px; background:var(--yellow); border-radius:50%; opacity:0.6; }
-.page-header::after { content:''; position:absolute; bottom:-80px; left:8%; width:200px; height:60px; background:var(--pink); transform:rotate(-6deg); opacity:0.85; }
+.page-header { padding:180px 40px 100px; background:var(--pink); border-bottom:3px solid var(--ink); position:relative; overflow:hidden; }
+.page-header::before { content:''; position:absolute; top:20%; right:-100px; width:340px; height:340px; background:var(--yellow); border-radius:50%; opacity:0.65; }
+.page-header::after { content:''; position:absolute; bottom:-80px; left:8%; width:200px; height:60px; background:var(--turquoise); transform:rotate(-6deg); opacity:0.85; }
 .page-header-inner { max-width:1200px; margin:0 auto; position:relative; z-index:1; }
 .page-breadcrumb { font-family:var(--font-accent); font-size:12px; letter-spacing:0.2em; text-transform:uppercase; font-weight:600; margin-bottom:24px; display:flex; gap:12px; align-items:center; }
 .page-title { font-family:var(--font-display); font-size:clamp(60px,10vw,160px); line-height:0.88; letter-spacing:-0.04em; font-weight:300; max-width:1000px; }
 .page-title em { font-style:italic; }
 .page-subtitle { margin-top:30px; font-family:var(--font-display); font-size:clamp(22px,2.4vw,32px); font-weight:400; font-style:italic; max-width:700px; }
 
-.press { padding:120px 40px; background:var(--cream); }
-.press-inner { max-width:1200px; margin:0 auto; }
-.press-intro { max-width:680px; margin:0 auto 80px; text-align:center; font-size:17px; line-height:1.7; color:var(--ink-soft); }
-.press-intro em { font-style:italic; color:var(--coral); }
+.intro-block { padding:120px 40px; background:var(--cream); }
+.intro-block-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1.4fr; gap:80px; align-items:start; }
+.intro-block-label { font-family:var(--font-accent); font-size:12px; letter-spacing:0.2em; text-transform:uppercase; font-weight:600; color:var(--coral); margin-bottom:20px; display:flex; align-items:center; gap:12px; }
+.intro-block-label::before { content:''; width:32px; height:2px; background:var(--coral); }
+.intro-block h2 { font-family:var(--font-display); font-size:clamp(40px,5vw,72px); line-height:0.95; font-weight:300; letter-spacing:-0.02em; }
+.intro-block h2 em { font-style:italic; color:var(--coral); }
+.intro-block-text { font-size:17px; line-height:1.75; color:var(--ink-soft); display:flex; flex-direction:column; gap:20px; }
+.intro-block-text p:first-child::first-letter { font-family:var(--font-display); font-size:2.2em; float:left; line-height:0.9; padding-right:8px; padding-top:6px; font-weight:400; }
 
-.press-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:36px; }
-.press-card { background:var(--cream); border:2px solid var(--ink); display:flex; flex-direction:column; transition:transform 0.3s, box-shadow 0.3s; overflow:hidden; }
-.press-card:hover { transform:translate(-5px,-5px); box-shadow:8px 8px 0 var(--ink); }
-.press-card .source-bar { padding:14px 20px; background:var(--ink); color:var(--cream); font-family:var(--font-accent); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; font-weight:600; display:flex; justify-content:space-between; align-items:center; }
-.press-card .source-bar .year { color:var(--yellow); }
-.press-card .body { padding:30px 26px; flex:1; display:flex; flex-direction:column; gap:18px; }
-.press-card h3 { font-family:var(--font-display); font-size:22px; line-height:1.25; font-weight:500; flex:1; }
-.press-card .read-more { font-family:var(--font-accent); font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; display:inline-flex; gap:8px; align-items:center; padding-top:14px; border-top:1px dashed rgba(26,26,26,0.3); transition:gap 0.2s; }
-.press-card:hover .read-more { gap:14px; }
+.team-section { padding:120px 40px; background:var(--yellow); border-top:3px solid var(--ink); border-bottom:3px solid var(--ink); }
+.team-head { max-width:1200px; margin:0 auto 70px; }
+.team-head .label { font-family:var(--font-accent); font-size:12px; letter-spacing:0.2em; text-transform:uppercase; font-weight:600; margin-bottom:16px; display:inline-block; padding:6px 14px; background:var(--ink); color:var(--cream); }
+.team-head h2 { font-family:var(--font-display); font-size:clamp(40px,5.5vw,80px); line-height:0.9; font-weight:300; letter-spacing:-0.02em; max-width:900px; }
+.team-head h2 em { font-style:italic; }
 
-.press-card.featured { position:relative; }
-.press-card.featured::before { content:'★'; position:absolute; top:-2px; right:-2px; width:36px; height:36px; background:var(--coral); color:var(--cream); display:flex; align-items:center; justify-content:center; font-size:16px; border:2px solid var(--ink); z-index:1; }
-
-.contact-press { padding:100px 40px; background:var(--turquoise); border-top:3px solid var(--ink); border-bottom:3px solid var(--ink); text-align:center; }
-.contact-press-inner { max-width:680px; margin:0 auto; }
-.contact-press h2 { font-family:var(--font-display); font-size:clamp(36px,5vw,64px); line-height:1; font-weight:300; letter-spacing:-0.02em; margin-bottom:20px; }
-.contact-press h2 em { font-style:italic; color:var(--ink); }
-.contact-press p { font-size:16px; line-height:1.7; margin-bottom:30px; }
-.contact-press a.btn { display:inline-flex; align-items:center; gap:14px; padding:18px 32px; background:var(--ink); color:var(--cream); font-family:var(--font-accent); font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; transition:transform 0.25s; }
-.contact-press a.btn:hover { transform:translate(-3px,-3px); }
+.team-grid { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); gap:30px; }
+.team-card { background:var(--cream); border:2px solid var(--ink); display:flex; flex-direction:column; transition:transform 0.3s, box-shadow 0.3s; }
+.team-card:hover { transform:translate(-4px,-4px); box-shadow:6px 6px 0 var(--ink); }
+.team-photo { aspect-ratio:1; overflow:hidden; border-bottom:2px solid var(--ink); background:var(--ink); }
+.team-photo img { width:100%; height:100%; object-fit:cover; filter:grayscale(100%); transition:transform 0.5s ease; }
+.team-card:hover .team-photo img { transform:scale(1.05); }
+.team-info { padding:24px 20px; text-align:center; }
+.team-info h3 { font-family:var(--font-display); font-size:22px; font-weight:500; line-height:1.1; }
 
 .closing { padding:120px 40px; background:var(--green); text-align:center; border-top:3px solid var(--ink); position:relative; overflow:hidden; }
 .closing::before { content:''; position:absolute; top:-80px; left:-80px; width:280px; height:280px; background:var(--yellow); border-radius:50%; opacity:0.55; }
@@ -97,26 +95,33 @@ button { font-family:inherit; cursor:pointer; border:none; background:none; }
   .nav-links.open { transform:translateX(0); }
   .nav-toggle { display:flex; z-index:1001; }
   .page-header { padding:140px 24px 70px; }
-  .press { padding:80px 24px; }
-  .press-grid { grid-template-columns:1fr; }
-  .contact-press { padding:80px 24px; }
+  .intro-block { padding:80px 24px; }
+  .intro-block-inner { grid-template-columns:1fr; gap:40px; }
+  .team-section { padding:80px 24px; }
+  .team-grid { grid-template-columns:repeat(2,1fr); gap:20px; }
   .closing { padding:80px 24px; }
   .footer { padding:80px 24px 30px; }
   .footer-top { grid-template-columns:1fr; gap:40px; padding-bottom:40px; }
+}
+@media (max-width:520px) {
+  .team-grid { grid-template-columns:1fr; }
 }
 </style>
 </head>
 <body>
 
 <nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="assets/LOGOLAR/akg-logo.png" alt="Alaçatı Kitap Günleri" style="height:50px;width:auto;" />
+  </a>
   <ul class="nav-links" id="navLinks">
     <li><a href="index.html">Anasayfa</a></li>
     <li><a href="hakkimizda.html">Hakkımızda</a></li>
     <li><a href="program.html">Etkinlik Programı</a></li>
     <li><a href="destekciler.html">Destekçiler</a></li>
     <li><a href="duyurular.html">Duyurular</a></li>
-    <li><a href="ekibimiz.html">Ekibimiz</a></li>
-    <li><a href="basin.html" class="active">Basın &amp; Medya</a></li>
+    <li><a href="ekibimiz.html" class="active">Ekibimiz</a></li>
+    <li><a href="basin.html">Basın &amp; Medya</a></li>
     <li><a href="iletisim.html">İletişim</a></li>
   </ul>
   <button class="nav-toggle" id="navToggle" aria-label="Menü">
@@ -127,100 +132,87 @@ button { font-family:inherit; cursor:pointer; border:none; background:none; }
 <section class="page-header">
   <div class="page-header-inner">
     <div class="page-breadcrumb">
-      <a href="index.html">Anasayfa</a> <span>/</span> <span>Basın &amp; Medya</span>
+      <a href="index.html">Anasayfa</a> <span>/</span> <span>Ekibimiz</span>
     </div>
     <h1 class="page-title">
-      Basın &amp; <em>Medya</em>
+      Ekibi<em>miz</em>
     </h1>
   </div>
 </section>
 
-<section class="press">
-  <div class="press-inner">
-    <p class="press-intro reveal">
-      Alaçatı Kitap Günleri'nin ulusal ve yerel basında yer alan haberlerini bu sayfada bulabilirsiniz. Basın bağlantıları için <em>info@alacatikitapgunleri.com</em> adresinden bizimle iletişime geçebilirsiniz.
-    </p>
-
-    <div class="press-grid reveal">
-
-      <a href="https://tr.euronews.com/kultur/2026/04/01/alacati-ilk-kitap-festivaline-hazirlaniyor-8-10-mayista-kapilarini-acacak" target="_blank" rel="noopener" class="press-card featured">
-        <div class="source-bar">
-          <span>EuroNews</span>
-          <span class="year">2026</span>
-        </div>
-        <div class="body">
-          <h3>Alaçatı ilk kitap festivaline hazırlanıyor: 8-10 Mayıs'ta kapılarını açacak</h3>
-          <span class="read-more">Habere git →</span>
-        </div>
-      </a>
-
-      <a href="https://cesmeninsesi.com.tr/haber/alacati-kitap-gunleri-mayis-ta-basliyor-5057" target="_blank" rel="noopener" class="press-card">
-        <div class="source-bar">
-          <span>Çeşme'nin Sesi</span>
-          <span class="year">2026</span>
-        </div>
-        <div class="body">
-          <h3>Alaçatı Kitap Günleri Mayıs'ta başlıyor</h3>
-          <span class="read-more">Habere git →</span>
-        </div>
-      </a>
-
-      <a href="https://www.edebiyathaber.net/alacati-kitap-gunleri-8-10-mayis-tarihleri-arasinda-gerceklesecek/" target="_blank" rel="noopener" class="press-card">
-        <div class="source-bar">
-          <span>EdebiyatHaber.Net</span>
-          <span class="year">2026</span>
-        </div>
-        <div class="body">
-          <h3>Alaçatı Kitap Günleri 8 – 10 Mayıs tarihleri arasında gerçekleşecek</h3>
-          <span class="read-more">Habere git →</span>
-        </div>
-      </a>
-
-       <a href="https://www.hurriyet.com.tr/gundem/alacatida-kitap-ruzgari-43145242" target="_blank" rel="noopener" class="press-card">
-        <div class="source-bar">
-          <span>Hürriyet</span>
-          <span class="year">2026</span>
-        </div>
-        <div class="body">
-          <h3>Alaçatı’da kitap rüzgârı</h3>
-          <span class="read-more">Habere git →</span>
-        </div>
-      </a>
-
-      <a href="https://gazeteoksijen.com/yazarlar/gulay-afsar/alacati-kitap-gunleri-ile-hafizasini-tazeliyor-270887" target="_blank" rel="noopener" class="press-card">
-        <div class="source-bar">
-          <span>Oksijen</span>
-          <span class="year">2026</span>
-        </div>
-        <div class="body">
-          <h3>Alaçatı, kitap günleri ile hafızasını tazeliyor</h3>
-          <span class="read-more">Habere git →</span>
-        </div>
-      </a>
-
-      <a href="https://www.edebiyathaber.net/alacati-kitap-gunleri-bu-yilin-konuk-yazarlarini-acikladi/" target="_blank" rel="noopener" class="press-card">
-        <div class="source-bar">
-          <span>Edebiyathaber.net</span>
-          <span class="year">2026</span>
-        </div>
-        <div class="body">
-          <h3>Alaçatı Kitap Günleri bu yılın konuk yazarlarını açıkladı</h3>
-          <span class="read-more">Habere git →</span>
-        </div>
-      </a>
-      
+<section class="intro-block">
+  <div class="intro-block-inner">
+    <div class="reveal">
+      <div class="intro-block-label">Ekibimiz</div>
+      <h2>
+        Kolektif bir <em>bakış açısı</em>.
+      </h2>
+    </div>
+    <div class="intro-block-text reveal">
+      <p>
+        Ekibimiz, proje yönetimi, yayıncılık, finans, turizm, kültür-sanat, iletişim, ve sosyal medya gibi farklı alanlarda deneyime sahip insanların bir araya gelmesiyle oluştu.
+      </p>
+      <p>
+        Bu buluşma, kolektif bir bakış açısıyla, özenle, sorumlulukla ve kültüre duyulan ortak bir ilgiyle şekilleniyor.
+      </p>
     </div>
   </div>
 </section>
 
-<section class="contact-press">
-  <div class="contact-press-inner">
-    <h2>Basın bültenleri ve <em>iş birlikleri</em> için.</h2>
-    <p>Basın temsilcileri, gazeteciler ve içerik üreticileri bizimle iletişime geçebilir. Basın kiti talepleri için aşağıdaki adresi kullanabilirsiniz.</p>
-    <a href="mailto:info@alacatikitapgunleri.com" class="btn">
-      info@alacatikitapgunleri.com
-      <span>→</span>
-    </a>
+<section class="team-section">
+  <div class="team-grid reveal">
+    <div class="team-card">
+      <div class="team-photo"><img src="assets/team/beyza-incekaya.png" alt="Beyza İncekaya" /></div>
+      <div class="team-info"><h3>Beyza İncekaya</h3></div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo"><img src="assets/team/burak-ozyasar.png" alt="Burak Özyaşar" /></div>
+      <div class="team-info"><h3>Burak Özyaşar</h3></div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo"><img src="assets/team/cemran-oder.png" alt="Cemran Öder" /></div>
+      <div class="team-info"><h3>Cemran Öder</h3></div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo"><img src="assets/team/cemre-ates.png" alt="Cemre Ateş" /></div>
+      <div class="team-info"><h3>Cemre Ateş</h3></div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo"><img src="assets/team/ece-dogan.jpg" alt="Ece Doğan" /></div>
+      <div class="team-info"><h3>Ece Doğan</h3></div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo"><img src="assets/team/gulay-tokgoz.png" alt="Gülay Tokgöz" /></div>
+      <div class="team-info"><h3>Gülay Tokgöz</h3></div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo"><img src="assets/team/mert-oktem.png" alt="Mert Öktem" /></div>
+      <div class="team-info"><h3>Mert Öktem</h3></div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo"><img src="assets/team/olcay-tokdemir.png" alt="Olcay Tokdemir" /></div>
+      <div class="team-info"><h3>Olcay Tokdemir</h3></div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo"><img src="assets/team/pinar-yazgan.png" alt="Pınar Yazgan" /></div>
+      <div class="team-info"><h3>Pınar Yazgan</h3></div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo"><img src="assets/team/selin-gurun.png" alt="Selin Gürün" /></div>
+      <div class="team-info"><h3>Selin Gürün</h3></div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo"><img src="assets/team/serap-yesilsakiz.png" alt="Serap Yeşilsakız" /></div>
+      <div class="team-info"><h3>Serap Yeşilsakız</h3></div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo"><img src="assets/team/serkan-altinisik.png" alt="Serkan Altınışık" /></div>
+      <div class="team-info"><h3>Serkan Altınışık</h3></div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo"><img src="assets/team/serra-celikkan.png" alt="Serra Çelikkan" /></div>
+      <div class="team-info"><h3>Serra Çelikkan</h3></div>
+    </div>
   </div>
 </section>
 
@@ -260,7 +252,7 @@ button { font-family:inherit; cursor:pointer; border:none; background:none; }
     </div>
   </div>
   <div class="footer-bottom">
-    <div>© 2026 Alaçatı Kitap Günleri. Tüm hakları saklıdır.</div>
+    <div>© 2026 SEM Event Organizasyon. Tüm hakları saklıdır.</div>
     <div class="socials">
       <a href="https://instagram.com/alacatikitapgunleri" target="_blank" aria-label="Instagram">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
