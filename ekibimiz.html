@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Ekibimiz — Alaçatı Kitap Günleri</title>
-<meta name="description" content="Alaçatı Kitap Günleri ekibi. Proje yönetimi, yayıncılık, finans, turizm, kültür-sanat, iletişim ve sosyal medya gibi farklı alanlarda deneyime sahip insanlar." />
+<title>Duyurular — Alaçatı Kitap Günleri</title>
+<meta name="description" content="Alaçatı Kitap Günleri'nden son duyurular, haberler ve gelişmeler." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +21,6 @@ button { font-family:inherit; cursor:pointer; border:none; background:none; }
 
 .nav { position:fixed; top:0; left:0; right:0; z-index:1000; padding:20px 40px; display:flex; align-items:center; justify-content:space-between; background:rgba(251,246,236,0.85); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid transparent; transition:border-color 0.3s ease, padding 0.3s ease; }
 .nav.scrolled { border-bottom-color:rgba(26,26,26,0.1); padding:14px 40px; }
-.nav-logo img { height:50px; width:auto; display:block; }
 .nav-links { display:flex; gap:32px; list-style:none; font-family:var(--font-accent); font-size:14px; font-weight:500; letter-spacing:0.02em; }
 .nav-links a { position:relative; padding:6px 0; transition:color 0.2s; }
 .nav-links a::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:var(--ink); transition:width 0.3s ease; }
@@ -32,8 +31,8 @@ button { font-family:inherit; cursor:pointer; border:none; background:none; }
 .nav-toggle.open span:nth-child(2) { opacity:0; }
 .nav-toggle.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
 
-.page-header { padding:180px 40px 100px; background:var(--pink); border-bottom:3px solid var(--ink); position:relative; overflow:hidden; }
-.page-header::before { content:''; position:absolute; top:20%; right:-100px; width:340px; height:340px; background:var(--yellow); border-radius:50%; opacity:0.65; }
+.page-header { padding:180px 40px 100px; background:var(--coral); border-bottom:3px solid var(--ink); position:relative; overflow:hidden; color:var(--ink); }
+.page-header::before { content:''; position:absolute; top:25%; right:-100px; width:340px; height:340px; background:var(--yellow); border-radius:50%; opacity:0.7; }
 .page-header::after { content:''; position:absolute; bottom:-80px; left:8%; width:200px; height:60px; background:var(--turquoise); transform:rotate(-6deg); opacity:0.85; }
 .page-header-inner { max-width:1200px; margin:0 auto; position:relative; z-index:1; }
 .page-breadcrumb { font-family:var(--font-accent); font-size:12px; letter-spacing:0.2em; text-transform:uppercase; font-weight:600; margin-bottom:24px; display:flex; gap:12px; align-items:center; }
@@ -41,33 +40,46 @@ button { font-family:inherit; cursor:pointer; border:none; background:none; }
 .page-title em { font-style:italic; }
 .page-subtitle { margin-top:30px; font-family:var(--font-display); font-size:clamp(22px,2.4vw,32px); font-weight:400; font-style:italic; max-width:700px; }
 
-.intro-block { padding:120px 40px; background:var(--cream); }
-.intro-block-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1.4fr; gap:80px; align-items:start; }
-.intro-block-label { font-family:var(--font-accent); font-size:12px; letter-spacing:0.2em; text-transform:uppercase; font-weight:600; color:var(--coral); margin-bottom:20px; display:flex; align-items:center; gap:12px; }
-.intro-block-label::before { content:''; width:32px; height:2px; background:var(--coral); }
-.intro-block h2 { font-family:var(--font-display); font-size:clamp(40px,5vw,72px); line-height:0.95; font-weight:300; letter-spacing:-0.02em; }
-.intro-block h2 em { font-style:italic; color:var(--coral); }
-.intro-block-text { font-size:17px; line-height:1.75; color:var(--ink-soft); display:flex; flex-direction:column; gap:20px; }
-.intro-block-text p:first-child::first-letter { font-family:var(--font-display); font-size:2.2em; float:left; line-height:0.9; padding-right:8px; padding-top:6px; font-weight:400; }
+.news-section { padding:120px 40px; background:var(--cream); }
+.news-inner { max-width:1100px; margin:0 auto; }
+.news-list { display:flex; flex-direction:column; gap:0; }
 
-.team-section { padding:120px 40px; background:var(--yellow); border-top:3px solid var(--ink); border-bottom:3px solid var(--ink); }
-.team-head { max-width:1200px; margin:0 auto 70px; }
-.team-head .label { font-family:var(--font-accent); font-size:12px; letter-spacing:0.2em; text-transform:uppercase; font-weight:600; margin-bottom:16px; display:inline-block; padding:6px 14px; background:var(--ink); color:var(--cream); }
-.team-head h2 { font-family:var(--font-display); font-size:clamp(40px,5.5vw,80px); line-height:0.9; font-weight:300; letter-spacing:-0.02em; max-width:900px; }
-.team-head h2 em { font-style:italic; }
+.news-item { display:grid; grid-template-columns:200px 1fr auto; gap:40px; align-items:start; padding:40px 0; border-bottom:2px solid var(--ink); transition:padding 0.3s; cursor:pointer; }
+.news-item:first-child { border-top:2px solid var(--ink); }
+.news-item:hover { padding-left:20px; padding-right:20px; }
+.news-item:hover h3 em { color:var(--coral); }
+.news-meta { font-family:var(--font-accent); font-size:12px; letter-spacing:0.15em; text-transform:uppercase; font-weight:600; }
+.news-meta .date { display:block; color:var(--coral); margin-bottom:6px; }
+.news-meta .category { color:var(--ink-soft); }
+.news-body h3 { font-family:var(--font-display); font-size:clamp(24px,3vw,36px); line-height:1.15; font-weight:400; margin-bottom:14px; }
+.news-body h3 em { font-style:italic; transition:color 0.3s; }
+.news-body p { font-size:16px; line-height:1.65; color:var(--ink-soft); max-width:640px; }
+.news-arrow { font-family:var(--font-display); font-size:32px; line-height:1; align-self:center; transition:transform 0.3s; }
+.news-item:hover .news-arrow { transform:translateX(8px); }
 
-.team-grid { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); gap:30px; }
-.team-card { background:var(--cream); border:2px solid var(--ink); display:flex; flex-direction:column; transition:transform 0.3s, box-shadow 0.3s; }
-.team-card:hover { transform:translate(-4px,-4px); box-shadow:6px 6px 0 var(--ink); }
-.team-photo { aspect-ratio:1; overflow:hidden; border-bottom:2px solid var(--ink); background:var(--ink); }
-.team-photo img { width:100%; height:100%; object-fit:cover; filter:grayscale(100%); transition:transform 0.5s ease; }
-.team-card:hover .team-photo img { transform:scale(1.05); }
-.team-info { padding:24px 20px; text-align:center; }
-.team-info h3 { font-family:var(--font-display); font-size:22px; font-weight:500; line-height:1.1; }
+/* ARTICLE DETAIL */
+.article-detail { padding:100px 40px; background:var(--cream); border-top:3px solid var(--ink); }
+.article-detail-inner { max-width:800px; margin:0 auto; }
+.article-detail .back { font-family:var(--font-accent); font-size:12px; letter-spacing:0.15em; text-transform:uppercase; font-weight:600; margin-bottom:40px; display:inline-flex; gap:8px; align-items:center; border-bottom:2px solid var(--ink); padding-bottom:4px; transition:gap 0.2s; }
+.article-detail .back:hover { gap:14px; }
+.article-detail .article-date { font-family:var(--font-accent); font-size:12px; letter-spacing:0.15em; text-transform:uppercase; font-weight:600; color:var(--coral); margin-bottom:16px; }
+.article-detail h2 { font-family:var(--font-display); font-size:clamp(32px,4vw,52px); line-height:1.05; font-weight:400; margin-bottom:12px; }
+.article-detail h2 em { font-style:italic; color:var(--coral); }
+.article-detail .article-sub { font-family:var(--font-display); font-style:italic; font-size:20px; color:var(--ink-soft); margin-bottom:40px; padding-bottom:30px; border-bottom:2px solid var(--ink); }
+.article-detail .article-body { font-size:17px; line-height:1.8; color:var(--ink-soft); display:flex; flex-direction:column; gap:20px; }
+.article-detail .article-body p:first-child::first-letter { font-family:var(--font-display); font-size:2.2em; float:left; line-height:0.9; padding-right:8px; padding-top:6px; font-weight:400; color:var(--ink); }
 
-.closing { padding:120px 40px; background:var(--green); text-align:center; border-top:3px solid var(--ink); position:relative; overflow:hidden; }
-.closing::before { content:''; position:absolute; top:-80px; left:-80px; width:280px; height:280px; background:var(--yellow); border-radius:50%; opacity:0.55; }
-.closing::after { content:''; position:absolute; bottom:-60px; right:-60px; width:220px; height:220px; background:var(--turquoise); border-radius:50%; opacity:0.55; }
+.subscribe { padding:120px 40px; background:var(--turquoise); border-top:3px solid var(--ink); border-bottom:3px solid var(--ink); text-align:center; }
+.subscribe-inner { max-width:680px; margin:0 auto; }
+.subscribe h2 { font-family:var(--font-display); font-size:clamp(36px,5vw,64px); line-height:1; font-weight:300; letter-spacing:-0.02em; margin-bottom:20px; }
+.subscribe h2 em { font-style:italic; }
+.subscribe p { font-size:16px; line-height:1.7; margin-bottom:30px; }
+.subscribe a.btn { display:inline-flex; align-items:center; gap:14px; padding:18px 32px; background:var(--ink); color:var(--cream); font-family:var(--font-accent); font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; transition:transform 0.25s; }
+.subscribe a.btn:hover { transform:translate(-3px,-3px); }
+
+.closing { padding:120px 40px; background:var(--pink); text-align:center; border-top:3px solid var(--ink); position:relative; overflow:hidden; }
+.closing::before { content:''; position:absolute; top:-80px; left:-80px; width:280px; height:280px; background:var(--yellow); border-radius:50%; opacity:0.6; }
+.closing::after { content:''; position:absolute; bottom:-60px; right:-60px; width:220px; height:220px; background:var(--turquoise); border-radius:50%; opacity:0.5; }
 .closing-inner { position:relative; z-index:1; max-width:900px; margin:0 auto; }
 .closing h2 { font-family:var(--font-display); font-size:clamp(44px,7vw,110px); line-height:0.9; font-weight:300; font-style:italic; letter-spacing:-0.03em; }
 
@@ -90,21 +102,18 @@ button { font-family:inherit; cursor:pointer; border:none; background:none; }
 
 @media (max-width:960px) {
   .nav { padding:16px 24px; }
-  .nav-logo img { height:42px; }
   .nav-links { position:fixed; top:0; right:0; width:75%; height:100vh; background:var(--cream); flex-direction:column; padding:100px 40px; gap:28px; font-size:22px; transform:translateX(100%); transition:transform 0.35s ease; box-shadow:-8px 0 30px rgba(0,0,0,0.1); }
   .nav-links.open { transform:translateX(0); }
   .nav-toggle { display:flex; z-index:1001; }
   .page-header { padding:140px 24px 70px; }
-  .intro-block { padding:80px 24px; }
-  .intro-block-inner { grid-template-columns:1fr; gap:40px; }
-  .team-section { padding:80px 24px; }
-  .team-grid { grid-template-columns:repeat(2,1fr); gap:20px; }
+  .news-section { padding:80px 24px; }
+  .news-item { grid-template-columns:1fr; gap:16px; }
+  .news-arrow { display:none; }
+  .article-detail { padding:80px 24px; }
+  .subscribe { padding:80px 24px; }
   .closing { padding:80px 24px; }
   .footer { padding:80px 24px 30px; }
   .footer-top { grid-template-columns:1fr; gap:40px; padding-bottom:40px; }
-}
-@media (max-width:520px) {
-  .team-grid { grid-template-columns:1fr; }
 }
 </style>
 </head>
@@ -118,9 +127,10 @@ button { font-family:inherit; cursor:pointer; border:none; background:none; }
     <li><a href="index.html">Anasayfa</a></li>
     <li><a href="hakkimizda.html">Hakkımızda</a></li>
     <li><a href="program.html">Etkinlik Programı</a></li>
+    <li><a href="harita.html">Harita</a></li>
     <li><a href="destekciler.html">Destekçiler</a></li>
-    <li><a href="duyurular.html">Duyurular</a></li>
-    <li><a href="ekibimiz.html" class="active">Ekibimiz</a></li>
+    <li><a href="duyurular.html" class="active">Duyurular</a></li>
+    <li><a href="ekibimiz.html">Ekibimiz</a></li>
     <li><a href="basin.html">Basın &amp; Medya</a></li>
     <li><a href="iletisim.html">İletişim</a></li>
   </ul>
@@ -132,91 +142,127 @@ button { font-family:inherit; cursor:pointer; border:none; background:none; }
 <section class="page-header">
   <div class="page-header-inner">
     <div class="page-breadcrumb">
-      <a href="index.html">Anasayfa</a> <span>/</span> <span>Ekibimiz</span>
+      <a href="index.html">Anasayfa</a> <span>/</span> <span>Duyurular</span>
     </div>
     <h1 class="page-title">
-      Ekibi<em>miz</em>
+      Duyu<em>rular</em>
     </h1>
+    <p class="page-subtitle">
+      Festivalden son haberler, gelişmeler ve duyurular.
+    </p>
   </div>
 </section>
 
-<section class="intro-block">
-  <div class="intro-block-inner">
-    <div class="reveal">
-      <div class="intro-block-label">Ekibimiz</div>
-      <h2>
-        Kolektif bir <em>bakış açısı</em>.
-      </h2>
-    </div>
-    <div class="intro-block-text reveal">
-      <p>
-        Ekibimiz, proje yönetimi, yayıncılık, finans, turizm, kültür-sanat, iletişim, ve sosyal medya gibi farklı alanlarda deneyime sahip insanların bir araya gelmesiyle oluştu.
-      </p>
-      <p>
-        Bu buluşma, kolektif bir bakış açısıyla, özenle, sorumlulukla ve kültüre duyulan ortak bir ilgiyle şekilleniyor.
-      </p>
+<section class="news-section">
+  <div class="news-inner">
+    <div class="news-list reveal">
+
+      <a href="#duyuru3" class="news-item">
+        <div class="news-meta">
+          <span class="date">22 Nisan 2026</span>
+          <span class="category">Basın Açıklaması</span>
+        </div>
+        <div class="news-body">
+          <h3>Alaçatı Kitap Günleri festival <em>programı</em> açıklandı</h3>
+          <p>Festival 8–10 Mayıs'ta edebiyatı Alaçatı sokaklarına taşıyor…</p>
+        </div>
+        <div class="news-arrow">→</div>
+      </a>
+
+      <a href="#duyuru2" class="news-item">
+        <div class="news-meta">
+          <span class="date">10 Nisan 2026</span>
+          <span class="category">Basın Açıklaması</span>
+        </div>
+        <div class="news-body">
+          <h3>Alaçatı Kitap Günleri bu yılın konuk <em>yazarlarını</em> açıkladı</h3>
+          <p>Okur ve yazarlar Mayıs'ta Alaçatı sokaklarında buluşmaya hazırlanıyor…</p>
+        </div>
+        <div class="news-arrow">→</div>
+      </a>
+
+      <a href="#duyuru1" class="news-item">
+        <div class="news-meta">
+          <span class="date">12 Mart 2026</span>
+          <span class="category">Basın Açıklaması</span>
+        </div>
+        <div class="news-body">
+          <h3>8–10 Mayıs'ta Alaçatı rüzgarı <em>kitapseverler</em> için esecek</h3>
+          <p>Alaçatı Kitap Günleri baharı edebiyat dolu bir hafta sonuyla kutluyor…</p>
+        </div>
+        <div class="news-arrow">→</div>
+      </a>
+
     </div>
   </div>
 </section>
 
-<section class="team-section">
-  <div class="team-grid reveal">
-    <div class="team-card">
-      <div class="team-photo"><img src="assets/team/beyza-incekaya.png" alt="Beyza İncekaya" /></div>
-      <div class="team-info"><h3>Beyza İncekaya</h3></div>
+<!-- DUYURU 3: 22 Nisan 2026 -->
+<section class="article-detail" id="duyuru3">
+  <div class="article-detail-inner reveal">
+    <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="back">← Tüm duyurular</a>
+    <div class="article-date">22 Nisan 2026 · İzmir</div>
+    <h2>Alaçatı Kitap Günleri festival <em>programı</em> açıklandı</h2>
+    <div class="article-sub">Festival 8–10 Mayıs'ta edebiyatı Alaçatı sokaklarına taşıyor…</div>
+    <div class="article-body">
+      <p>Bu yıl 8–10 Mayıs'ta ilk kez gerçekleşecek Alaçatı Kitap Günleri'nin festival programı açıklandı. Söyleşiler, atölyeler, kitap kulüpleri, çocuk atölyeleri gibi farklı buluşmalarla dolu program, bahar atmosferinde yazar, yayınevi ve okurları bir araya getirecek.</p>
+      <p>Ahmet Şerif İzgören, Adil Yıldırım, Başak Sayan, Can Bonomo, French Oje, Jehan Barbur, Kürşat Başar, Mine Söğüt, Tuğba Parıltı ve Yıldız Hacıevliyagil'in de aralarında bulunduğu konuk yazarlar, Alaçatı'nın farklı mekanlarında bir haftasonu boyunca okurlarla buluşacak.</p>
+      <p>Festivalin bu yılki "İlkler" teması altında yapılan söyleşiler, sanatta başlangıç noktalarını ele alıyor. Edebiyatta ilk kitaplar, sinemada ve tiyatroda tarihe iz bırakan ilk anlar, yazarların ilklerle dolu yolculukları… Tematik söyleşiler arasında Sibel Oral ile "İlk Uyarlamalardan Bugüne – Edebiyattan Beyaz Perdeye", Jehan Barbur ile "İlklerim", Ferdi Çetin ile "Tiyatroda İlkler" ve Tuna Kiremitçi ile "Edebiyatta İlklerim" var.</p>
+      <p>Programın dikkat çeken etkinliklerinden biri de 2024 yılında kaybettiğimiz Füruzan anısına düzenlenen, Birsen Ferahlı ve Cemran Öder'in "Füruzan Anısına: Ege'den Sevgilerle" başlıklı söyleşisi.</p>
+      <p>Ek olarak Yaahane'de gün boyu yapılacak kitap kulübü buluşmaları, Arkas Sanat'ta çocuklara özel okuma, boyama ve öğrenme atölyeleri, ve Gaia Alaçatı'da kitap temalı bir quiz gecesi de festival programına dahil.</p>
+      <p>Alaçatı Kitap Günleri Çeşme Kaymakamlığı, Çeşme Belediyesi, Alaçatı Turizm Derneği, Pegasus Hava Yolları, Arkas Sanat ve Storytel'in destekleriyle gerçekleşiyor. Tüm etkinlikler katılımcılara ücretsiz olacak.</p>
+      <p>Tam programa alacatikitapgunleri.com üzerinden ulaşabilir, katılmak istediğiniz söyleşiler için ön talep formunu doldurabilirsiniz.</p>
+      <p>Alaçatı Kitap Günleri tüm kitapseverleri Mayıs'ta bu kültürel buluşmaya davet ediyor.</p>
+      <p>Güncel duyurular ve gelişmeler için festivalin dijital kanalı @alacatikitapgunleri'ni takip edin.</p>
     </div>
-    <div class="team-card">
-      <div class="team-photo"><img src="assets/team/burak-ozyasar.png" alt="Burak Özyaşar" /></div>
-      <div class="team-info"><h3>Burak Özyaşar</h3></div>
+  </div>
+</section>
+
+<!-- DUYURU 2: 10 Nisan 2026 -->
+<section class="article-detail" id="duyuru2">
+  <div class="article-detail-inner reveal">
+    <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="back">← Tüm duyurular</a>
+    <div class="article-date">10 Nisan 2026 · İzmir</div>
+    <h2>Alaçatı Kitap Günleri bu yılın konuk <em>yazarlarını</em> açıkladı</h2>
+    <div class="article-sub">Okur ve yazarlar Mayıs'ta Alaçatı sokaklarında buluşmaya hazırlanıyor…</div>
+    <div class="article-body">
+      <p>8-9-10 Mayıs 2026 tarihlerinde ilk kez düzenlenecek Alaçatı Kitap Günleri'nin bu yılki konuk yazarları belli oldu. "İlkler" temasıyla hayata geçirilen festival, bir hafta sonu boyunca edebiyatın farklı alanlarından isimleri Alaçatı'da bir araya getirecek.</p>
+      <p>Programda Ahmet Şerif İzgören, Ayça Derin Karabulut, Başak Sayan, Can Bonomo, Ferdi Çetin, Hakan Bilgin, Kürşat Başar, Jehan Barbur, Ömer Duran, Mine Söğüt, Müge İplikçi, Sibel Oral, Tuğba Parıltı, Tuna Kiremitçi ve Zeliha Bürtek'in de aralarında bulunduğu 25'in üzerinde yazar yer alıyor.</p>
+      <p>Festival, 25'ten fazla yayınevinin katılımıyla gerçekleşecek açık hava kitap fuarı, yazar söyleşileri, atölyeler, kitap kulüpleri, edebiyat temalı bilgi yarışması ve çocuk etkinliklerinden oluşan programıyla üç gün boyunca Alaçatı'yı renklendirecek.</p>
+      <p>Programda tematik söyleşilerin yanı sıra, 2024 yılında kaybettiğimiz edebiyatımızın güçlü kalemi Füruzan, Birsen Ferahlı ve Cemran Öder'in "Füruzan Anısına: Ege'den Sevgilerle" başlıklı söyleşiyle anılacak. Tam program önümüzdeki günlerde açıklanacak.</p>
+      <p>Alaçatı Kitap Günleri tüm kitapseverleri Mayıs'ta bu kültürel buluşmaya davet ediyor.</p>
+      <p>Program akışı, yazar listesi ve tüm güncel gelişmelerden haberdar olmak için alacatikitapgunleri.com web sitesini ziyaret edebilir, Alaçatı Kitap Günleri'nin dijital kanalı @alacatikitapgunleri'ni takip edebilirsiniz.</p>
     </div>
-    <div class="team-card">
-      <div class="team-photo"><img src="assets/team/busra-kalanlar.jpeg" alt="Büşra Kalanlar" /></div>
-      <div class="team-info"><h3>Büşra Kalanlar</h3></div>
+  </div>
+</section>
+
+<!-- DUYURU 1: 12 Mart 2026 -->
+<section class="article-detail" id="duyuru1">
+  <div class="article-detail-inner reveal">
+    <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="back">← Tüm duyurular</a>
+    <div class="article-date">12 Mart 2026 · İzmir</div>
+    <h2>8–10 Mayıs'ta Alaçatı rüzgarı <em>kitapseverler</em> için esecek</h2>
+    <div class="article-sub">Alaçatı Kitap Günleri baharı edebiyat dolu bir hafta sonuyla kutluyor…</div>
+    <div class="article-body">
+      <p>Alaçatı, 8–10 Mayıs 2026 tarihlerinde Alaçatı Kitap Günleri ile edebiyat odaklı yeni bir buluşmaya ev sahipliği yapmaya hazırlanıyor. Bu yıl ilk kez düzenlenecek olan etkinlik, edebiyatı müzik, sanat ve gastronomiyle birleştirerek bölgeyi üç gün boyunca ilham verici bir kültür rotasına dönüştürecek.</p>
+      <p>Programda açık hava kitap fuarının yanı sıra, yazar söyleşileri, imza günleri ve atölyeler yer alıyor. Okuma seansları, çocuklara yönelik aktiviteler, sokak etkinlikleri ve kitap temalı bilgi yarışması ise programın deneyim odaklı yapısını zenginleştirecek.</p>
+      <p>Etkinliğin ana mekanları arasında Alaçatı'nın karakteristik otelleri, kafe ve restoranları, sahil ve meydanları var. Ziyaretçiler farklı mekanlar arasında gezerek kasabaya yayılan festival atmosferinin parçası olacak.</p>
+      <p>Etkinliğe Türkiye'de roman, öykü, şiir, araştırma-inceleme, çizgi roman ile çocuk ve gençlik edebiyatı alanlarında üretim yapan 20'nin üzerinde yayınevi katılacak. Katılımcılar arasında 160. Kilometre, Alef, Alfa, Aras, Baobab, Destek, Doğan, Elma, Gerekli Şeyler, Hayalperest, Holden, İletişim, İnkılap, İstos, İthaki, Kelime, Kolektif, Metis, Nesin, Siren ve TUDEM yer alıyor.</p>
+      <p>Bu yılın festival teması ise "İlkler". Program, üretimin başlangıç anlarına ve yaratıcı süreçlerin ön adımlarına odaklanıyor. Tematik etkinliklerde "Edebiyatta İlk Kitaplar", "Sinemada İlk'ler", "Müzik Tarihimizde İlk'ler" ve "Tiyatroda İlk'ler" gibi başlıklar var.</p>
+      <p>Alaçatı Kitap Günleri, sürdürülebilir ve her yıl büyüyen bir kültür etkinliği olma vizyonuyla tüm kitapseverleri Mayıs'ta bu kültürel buluşmaya davet ediyor.</p>
+      <p>Daha fazla bilgi için alacatikitapgunleri.com sitesini ziyaret edebilir, sosyal medyada @alacatikitapgunleri üzerinden gelişmeleri takip edebilirsiniz.</p>
     </div>
-    <div class="team-card">
-      <div class="team-photo"><img src="assets/team/cemran-oder.png" alt="Cemran Öder" /></div>
-      <div class="team-info"><h3>Cemran Öder</h3></div>
-    </div>
-    <div class="team-card">
-      <div class="team-photo"><img src="assets/team/cemre-ates.png" alt="Cemre Ateş" /></div>
-      <div class="team-info"><h3>Cemre Ateş</h3></div>
-    </div>
-    <div class="team-card">
-      <div class="team-photo"><img src="assets/team/ece-dogan.jpg" alt="Ece Doğan" /></div>
-      <div class="team-info"><h3>Ece Doğan</h3></div>
-    </div>
-    <div class="team-card">
-      <div class="team-photo"><img src="assets/team/gulay-tokgoz.png" alt="Gülay Tokgöz" /></div>
-      <div class="team-info"><h3>Gülay Tokgöz</h3></div>
-    </div>
-    <div class="team-card">
-      <div class="team-photo"><img src="assets/team/mert-oktem.png" alt="Mert Öktem" /></div>
-      <div class="team-info"><h3>Mert Öktem</h3></div>
-    </div>
-    <div class="team-card">
-      <div class="team-photo"><img src="assets/team/olcay-tokdemir.png" alt="Olcay Tokdemir" /></div>
-      <div class="team-info"><h3>Olcay Tokdemir</h3></div>
-    </div>
-    <div class="team-card">
-      <div class="team-photo"><img src="assets/team/pinar-yazgan.png" alt="Pınar Yazgan" /></div>
-      <div class="team-info"><h3>Pınar Yazgan</h3></div>
-    </div>
-    <div class="team-card">
-      <div class="team-photo"><img src="assets/team/selin-gurun.png" alt="Selin Gürün" /></div>
-      <div class="team-info"><h3>Selin Gürün</h3></div>
-    </div>
-    <div class="team-card">
-      <div class="team-photo"><img src="assets/team/serap-yesilsakiz.png" alt="Serap Yeşilsakız" /></div>
-      <div class="team-info"><h3>Serap Yeşilsakız</h3></div>
-    </div>
-    <div class="team-card">
-      <div class="team-photo"><img src="assets/team/serkan-altinisik.png" alt="Serkan Altınışık" /></div>
-      <div class="team-info"><h3>Serkan Altınışık</h3></div>
-    </div>
-    <div class="team-card">
-      <div class="team-photo"><img src="assets/team/serra-celikkan.png" alt="Serra Çelikkan" /></div>
-      <div class="team-info"><h3>Serra Çelikkan</h3></div>
-    </div>
+  </div>
+</section>
+
+<section class="subscribe">
+  <div class="subscribe-inner">
+    <h2>Gelişmelerden <em>haberdar</em> olun.</h2>
+    <p>Festivalle ilgili tüm güncel haberler, program açıklamaları ve duyurular için Instagram hesabımızı takip edebilirsiniz.</p>
+    <a href="https://instagram.com/alacatikitapgunleri" target="_blank" class="btn">
+      @alacatikitapgunleri
+      <span>→</span>
+    </a>
   </div>
 </section>
 
@@ -239,7 +285,8 @@ button { font-family:inherit; cursor:pointer; border:none; background:none; }
       <ul>
         <li><a href="hakkimizda.html">Hakkımızda</a></li>
         <li><a href="program.html">Etkinlik Programı</a></li>
-        <li><a href="destekciler.html">Destekçiler</a></li>
+        <li><a href="harita.html">Harita</a></li>
+    <li><a href="destekciler.html">Destekçiler</a></li>
         <li><a href="duyurular.html">Duyurular</a></li>
         <li><a href="ekibimiz.html">Ekibimiz</a></li>
         <li><a href="basin.html">Basın &amp; Medya</a></li>
@@ -260,6 +307,9 @@ button { font-family:inherit; cursor:pointer; border:none; background:none; }
     <div class="socials">
       <a href="https://instagram.com/alacatikitapgunleri" target="_blank" aria-label="Instagram">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a href="#" target="_blank" aria-label="TikTok">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005.8 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1.84-.1z"/></svg>
       </a>
     </div>
   </div>
