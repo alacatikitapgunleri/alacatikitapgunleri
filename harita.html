@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Ziyaret Bilgileri — Alaçatı Kitap Günleri</title>
-<meta name="description" content="Alaçatı Kitap Günleri festival ziyaret bilgileri, mekanlar, ulaşım ve harita." />
+<title>Harita — Alaçatı Kitap Günleri</title>
+<meta name="description" content="Alaçatı Kitap Günleri festival mekanları haritası." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,26 +37,6 @@ button { font-family:inherit; cursor:pointer; border:none; background:none; }
 .page-header-inner { max-width:1200px; margin:0 auto; position:relative; z-index:1; }
 .page-breadcrumb { font-family:var(--font-accent); font-size:12px; letter-spacing:0.2em; text-transform:uppercase; font-weight:600; margin-bottom:24px; display:flex; gap:12px; align-items:center; }
 .page-title { font-family:var(--font-display); font-size:clamp(60px,10vw,160px); line-height:0.88; letter-spacing:-0.04em; font-weight:300; max-width:1000px; }
-
-.info-section { padding:100px 40px; background:var(--cream); }
-.info-inner { max-width:900px; margin:0 auto; }
-.info-block { margin-bottom:60px; padding-bottom:60px; border-bottom:2px solid rgba(26,26,26,0.15); }
-.info-block:last-child { margin-bottom:0; padding-bottom:0; border-bottom:none; }
-.info-block h2 { font-family:var(--font-display); font-size:clamp(28px,3.5vw,42px); font-weight:400; line-height:1.1; margin-bottom:24px; }
-.info-block h2 em { font-style:italic; color:var(--coral); }
-.info-block p { font-size:16px; line-height:1.75; color:var(--ink-soft); margin-bottom:16px; }
-.info-block p:last-child { margin-bottom:0; }
-.info-block a.inline-link { border-bottom:2px solid var(--coral); color:var(--coral); font-weight:500; transition:color 0.2s; }
-.info-block a.inline-link:hover { color:var(--ink); border-bottom-color:var(--ink); }
-.info-block .address { font-family:var(--font-accent); font-size:13px; letter-spacing:0.05em; color:var(--ink); font-weight:500; display:block; margin:8px 0 16px; }
-.info-block .venue-item { padding:12px 0; border-bottom:1px dashed rgba(26,26,26,0.2); }
-.info-block .venue-item:last-child { border-bottom:none; }
-.info-block .venue-name { font-family:var(--font-display); font-size:20px; font-weight:500; margin-bottom:4px; }
-.info-block .venue-address { font-family:var(--font-accent); font-size:12px; letter-spacing:0.05em; color:var(--ink-soft); }
-.info-block .transport-item { padding:12px 0; border-bottom:1px dashed rgba(26,26,26,0.2); display:grid; grid-template-columns:120px 1fr; gap:16px; }
-.info-block .transport-item:last-child { border-bottom:none; }
-.info-block .transport-label { font-family:var(--font-accent); font-size:12px; letter-spacing:0.15em; text-transform:uppercase; font-weight:600; color:var(--coral); padding-top:2px; }
-.info-block .transport-desc { font-size:15px; line-height:1.6; color:var(--ink-soft); }
 
 .map-section { padding:80px 40px; background:var(--cream); }
 .map-inner { max-width:1200px; margin:0 auto; }
@@ -92,10 +72,8 @@ button { font-family:inherit; cursor:pointer; border:none; background:none; }
   .nav-links.open { transform:translateX(0); }
   .nav-toggle { display:flex; z-index:1001; }
   .page-header { padding:140px 24px 70px; }
-  .info-section { padding:60px 24px; }
   .map-section { padding:40px 24px; }
   .map-container iframe { height:50vh; min-height:350px; }
-  .info-block .transport-item { grid-template-columns:1fr; gap:4px; }
   .closing { padding:80px 24px; }
   .footer { padding:80px 24px 30px; }
   .footer-top { grid-template-columns:1fr; gap:40px; padding-bottom:40px; }
@@ -112,7 +90,7 @@ button { font-family:inherit; cursor:pointer; border:none; background:none; }
     <li><a href="index.html">Anasayfa</a></li>
     <li><a href="hakkimizda.html">Hakkımızda</a></li>
     <li><a href="program.html">Festival Programı</a></li>
-    <li><a href="harita.html" class="active">Ziyaret Bilgileri</a></li>
+    <li><a href="harita.html" class="active">Harita</a></li>
     <li><a href="destekciler.html">Destekçiler</a></li>
     <li><a href="duyurular.html">Duyurular</a></li>
     <li><a href="ekibimiz.html">Ekibimiz</a></li>
@@ -127,83 +105,11 @@ button { font-family:inherit; cursor:pointer; border:none; background:none; }
 <section class="page-header">
   <div class="page-header-inner">
     <div class="page-breadcrumb">
-      <a href="index.html">Anasayfa</a> <span>/</span> <span>Ziyaret Bilgileri</span>
+      <a href="index.html">Anasayfa</a> <span>/</span> <span>Harita</span>
     </div>
     <h1 class="page-title">
-      Ziyaret Bilgileri
+      Harita
     </h1>
-  </div>
-</section>
-
-<section class="info-section">
-  <div class="info-inner">
-
-    <div class="info-block reveal">
-      <h2>Genel <em>Bilgiler</em></h2>
-      <p>Alaçatı Kitap Günleri 8-10 Mayıs'ta gerçekleşecek.</p>
-      <p>Yayınevlerinin stantlarının kurulacağı fuar alanımız festival boyunca (Cuma, Cumartesi ve Pazar günleri) saat 10:00-22:00 arasında ziyaretçilere açık olacak.</p>
-      <p><span class="address">Fuar Alanı: Alaçatı, 1002. Sok, Çeşme/İzmir</span></p>
-      <p>Fuar alanında yer alan Alaçatı Kitap Günleri masasında festival kaydınızı yaptırabilir, ücretsiz festival bilekliğinizi alabilirsiniz. Bilekliğiniz ile Alaçatı genelindeki partner işletmelerde sunulan indirimlerden faydalanabilirsiniz. Partner işletmelerimizin listesi için: <a href="https://alacatikitapgunleri.com/destekciler.html" class="inline-link">destekciler.html</a></p>
-      <p>Alaçatı Kitap Günleri'nin düzenlediği tüm etkinlikler ücretsizdir.</p>
-    </div>
-
-    <div class="info-block reveal">
-      <h2>Program &amp; <em>Etkinlikler</em></h2>
-      <p>Tam festival programına buradan ulaşabilirsiniz: <a href="https://alacatikitapgunleri.com/program.html" class="inline-link">program.html</a></p>
-      <p>Kontenjanların sınırlı olması nedeniyle, katılmak istediğiniz etkinlikler için ön talep formu doldurmanızı öneririz. Söyleşilere girişte, form dolduran katılımcılara öncelik tanınacak.</p>
-    </div>
-
-    <div class="info-block reveal">
-      <h2><em>Mekanlar</em></h2>
-      <div class="venue-item">
-        <div class="venue-name">Çocuk etkinlikleri: Yaahane Art</div>
-        <div class="venue-address">Alaçatı, 12012. Sk. No:70, 35930 Çeşme/İzmir (Hacı Memiş Camii karşısı)</div>
-      </div>
-      <div class="venue-item">
-        <div class="venue-name">Yerel yazarlar ve kitap kulüpleri: Arkas Sanat Alaçatı</div>
-        <div class="venue-address">Alaçatı, 12500. Sk. No:2, 35950 Çeşme/İzmir</div>
-      </div>
-      <div class="venue-item">
-        <div class="venue-name">Kitap temalı quiz: Gaia Alaçatı</div>
-        <div class="venue-address">Alaçatı, 13002 Sok No:11, 35937 Çeşme/İzmir</div>
-      </div>
-      <div class="venue-item">
-        <div class="venue-name">Söyleşiler</div>
-        <div class="venue-address">Farklı otellerde gerçekleşecek. Detaylı mekan bilgileri için festival programını inceleyebilir ve aşağıdaki haritaya göz atabilirsiniz.</div>
-      </div>
-    </div>
-
-    <div class="info-block reveal">
-      <h2>Alaçatı'ya <em>Ulaşım</em></h2>
-      <div class="transport-item">
-        <div class="transport-label">Uçak</div>
-        <div class="transport-desc">En yakın havaalanı olan İzmir Adnan Menderes Havalimanı'na uçup, buradan Havaş, transfer ya da araç kiralama ile Alaçatı'ya geçebilirsiniz.</div>
-      </div>
-      <div class="transport-item">
-        <div class="transport-label">Otobüs</div>
-        <div class="transport-desc">Otobüs ile İzmir'e ya da Çeşme otogarına varıp ardından dolmuş veya taksiyle Alaçatı'ya ulaşabilirsiniz.</div>
-      </div>
-      <div class="transport-item">
-        <div class="transport-label">İzmir merkezden</div>
-        <div class="transport-desc">İZBAN ile merkeze ulaşıp, ardından Çeşme/Alaçatı yönüne giden dolmuşlara binebilirsiniz.</div>
-      </div>
-    </div>
-
-    <div class="info-block reveal">
-      <h2>Yeme &amp; <em>İçme</em></h2>
-      <p>Festival boyunca partner mekanlarımız (oteller, kafe ve restoranlar vb.) ziyaretçilerimize özel indirimler sunuyor. Bu indirimlerin tam listesine şuradan ulaşabilirsiniz: <a href="https://alacatikitapgunleri.com/destekciler.html" class="inline-link">destekciler.html</a></p>
-    </div>
-
-    <div class="info-block reveal">
-      <h2><em>İletişim</em></h2>
-      <p>Her türlü sorunuz için bizimle <a href="mailto:info@alacatikitapgunleri.com" class="inline-link">info@alacatikitapgunleri.com</a> üzerinden irtibata geçebilirsiniz.</p>
-    </div>
-
-    <div class="info-block reveal" style="border-bottom:none;">
-      <h2><em>Harita</em></h2>
-      <p>Etkinliklerimizin gerçekleşeceği farklı mekanları aşağıdaki haritada bulabilirsiniz.</p>
-    </div>
-
   </div>
 </section>
 
@@ -234,7 +140,7 @@ button { font-family:inherit; cursor:pointer; border:none; background:none; }
       <ul>
         <li><a href="hakkimizda.html">Hakkımızda</a></li>
         <li><a href="program.html">Festival Programı</a></li>
-        <li><a href="harita.html">Ziyaret Bilgileri</a></li>
+        <li><a href="harita.html">Harita</a></li>
         <li><a href="destekciler.html">Destekçiler</a></li>
         <li><a href="duyurular.html">Duyurular</a></li>
         <li><a href="ekibimiz.html">Ekibimiz</a></li>
